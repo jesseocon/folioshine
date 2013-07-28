@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  layout 'signing'
   def new
   end
   
