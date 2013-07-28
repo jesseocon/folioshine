@@ -14,7 +14,16 @@ Folioshine::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.mandrillapp.com',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['MANDRILL_USERNAME'],
+    :password       => ENV['MANDRILL_APIKEY'],
+    :domain         => 'frozen-spire-6104.herokuapp.com',
+    :enable_starttls_auto => true
+  }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
