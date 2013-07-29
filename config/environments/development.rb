@@ -19,9 +19,9 @@ Folioshine::Application.configure do
     :address        => 'smtp.mandrillapp.com',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => ENV['MANDRILL_USERNAME'],
-    :password       => ENV['MANDRILL_APIKEY'],
-    :domain         => 'frozen-spire-6104.herokuapp.com',
+    :user_name      => ENV['FOLIOSHINE_MANDRILL_USERNAME'],
+    :password       => ENV['FOLIOSHINE_MANDRILL_APIKEY'],
+    :domain         => 'powerful-peak-1197.herokuapp.com',
     :enable_starttls_auto => true
   }
 

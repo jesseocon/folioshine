@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base
   default :from => "app15115987@heroku.com"
   if Rails.env.production?
-    default_url_options[:host] = "frozen-spire-6104.herokuapp.com"
+    default_url_options[:host] = "powerful-peak-1197.herokuapp.com"
   else
     default_url_options[:host] = "localhost:3000" 
   end
