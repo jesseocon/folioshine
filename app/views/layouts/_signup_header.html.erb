@@ -10,6 +10,14 @@
           <li>
             <a href="#">Home</a> 
           </li>
+          <li>
+              <% if current_user %>
+                  <%= link_to 'Sign Out', logout_path, 
+                       method: :delete, 
+                       confirmation: "Are you sure" 
+                  %>
+              <% end %>
+          </li>
         </ul>
       </div>
     </div>
