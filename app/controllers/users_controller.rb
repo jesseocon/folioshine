@@ -6,10 +6,9 @@ class UsersController < ApplicationController
 
   def new
     if current_user
-      redirect_to root_url
+      redirect_to users_path
     else
       @user = User.new
-      render :layout => 'signing'
     end  
   end
   

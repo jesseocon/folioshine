@@ -1,3 +1,7 @@
 div#folio-header.navbar-inner {
   background: #222;
 }
+
+.fullwidth {
+  width:100%
+}

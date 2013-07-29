@@ -1,20 +1,19 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_many :charges
-  has_many :folios
   has_many :albums
   has_many :invitations, :foreign_key => "user_email"
   has_many :contacts
   attr_accessible :auth_token, :email, :password, :password_confirmation, 
                   :password_digest, :password_reset_at, :password_reset_token, 
-                  :verification_token, :verified, :name, :stripe_id,
+                  :verification_token, :verified, :f_name, :l_name, :stripe_id,
                   :last_4_digits
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   validates_presence_of :password, on: :create
-  validates_presence_of :password_confirmation
-  validates :name, presence: true, length: { minimum: 4, maximum: 30 }
+  validates_presence_of :password_confirmation, on: :create
+  validates :l_name, presence: true, length: { minimum: 4, maximum: 30 }
+  validates :f_name, presence: true, length: { minimum: 4, maximum: 30 }
   before_create { generate_token(:auth_token) }
   before_create { generate_token(:verification_token) }
   before_save { |user| user.email = email.downcase }
@@ -34,7 +33,7 @@ class User < ActiveRecord::Base
   
   def verify!
     self.verified = true
-    self.save
+    self.save!
   end
   
   def verified?

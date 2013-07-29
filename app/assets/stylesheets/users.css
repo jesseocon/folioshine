@@ -26,6 +26,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   box-shadow: inset 0px 1px 1px 1px rgba(49, 48, 48, .1);
 }
 
-#folio-header {
-  background:#222222
+#signup-form form input.fullwidth {
+  width:100%
 }

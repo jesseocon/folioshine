@@ -11,6 +11,7 @@ class VerificationsController < ApplicationController
   private 
     def load_user_by_verification_token
       @user = User.find_by_verification_token(params[:id])
+      puts "*************#{@user.inspect}"
       flash[:notice] = 'Unable to find your account' unless @user
     end
 end
