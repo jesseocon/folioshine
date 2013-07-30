@@ -4,7 +4,7 @@ Folioshine::Application.routes.draw do
   delete 'logout',  to: 'sessions#destroy', as: 'logout'
   
   root to: 'sessions#new'
-  
+  resources :accounts
   resources :albums do 
     member do 
       get 'get_pics'
