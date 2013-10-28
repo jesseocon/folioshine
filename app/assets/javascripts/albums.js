@@ -5,4 +5,7 @@ $(document).ready(function(){
 	    }, all: function(){
 	    }
 	});
+	
+	$('.muther').colorbox({rel: 'muther', maxHeight:'500px', scalePhotos:true});
+	
 });

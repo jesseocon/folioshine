@@ -15,6 +15,10 @@ class InboxController < ApplicationController
         puts "************CONTENT TYPE#{a1.type}"
         @incoming_message.save_photo(a1.name, a1.type, a1.content)
         @incoming_message.save
+        
+        Pusher['test_channel'].trigger('greet', {
+          :greeting => "Hello there!", image: @incoming_message, image_url: @incoming_message.photo.url 
+        })
       end
     end
   end

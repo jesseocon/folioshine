@@ -1,3 +1,19 @@
+<script type="text/javascript">
+	var pusher = new Pusher('<%= Pusher.key %>'); // uses your APP KEY
+	var channel = pusher.subscribe('test_channel');
+	channel.bind('greet', function(data) {
+	  //alert(data.greeting);
+	//$('#ima-grid').append()
+	console.log(data.image_url)
+	var img_cont = "<div class='span3 top-spacer bottom-spacer picto'><div class='nailthumb-container side-spacer pic-wrapper' id='"+data.image.id+"'><a href='"+data.image_url+"' class='muther cboxElement'><img src='"+data.image_url+"' class='item' /></a></div></div>"
+	var cont_id = '#'+ data.image.id.toString();
+	$('#ima-grid').prepend(img_cont);
+	$(cont_id).nailthumb({width:225,height:225, fitDirection: 'top left', preload:true});
+	$('.muther').colorbox({rel: 'muther', maxHeight:'500px', scalePhotos:true});
+});
+
+
+</script>
 <div class="span9 content-wrapper">
   <div class="row">
     <div class="span6 top-spacer bottom-spacer account-info">
@@ -18,11 +34,11 @@
 </div><!-- end of span9 account-wrapper -->
 
 <div class='span9 content-wrapper top-spacer'>
-	<div class='row'>
+	<div class='row' id='ima-grid'>
 		<% @pics.each do |pic| %>
 			<div class='span3 top-spacer bottom-spacer picto'>
 				<div class='nailthumb-container side-spacer pic-wrapper'>
-					<%= link_to(image_tag(pic.photo.url, class: 'item'), '#') %>
+					<%= link_to(image_tag(pic.photo.url, class: 'item'), pic.photo.url, class: 'muther') %>
 				</div><!-- end nailthumb-container side-spacer pic-wrapper -->
 			</div><!-- end span3 top-spacer bottom-spacer picto -->
 		<% end %><!-- end pics-->
