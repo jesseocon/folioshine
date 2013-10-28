@@ -5,3 +5,22 @@ div#folio-header.navbar-inner {
 .fullwidth {
   width:100%
 }
+h1
+{
+	color:white;
+}
+
+div.content-wrapper h3 {
+	text-align: left;
+}
+
+div.content-wrapper h3 span {
+	font-size: .9em;
+	color:#00ADBD;
+}
+
+input.app-input {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	height:30px;
+}

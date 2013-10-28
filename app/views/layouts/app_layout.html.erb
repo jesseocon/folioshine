@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Folioshine</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link rel="stylesheet" href="https://djyhxgczejc94.cloudfront.net/builds/a4ff9419d40427bda6c1bca64ab16d94bd67a337.css">
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render 'layouts/signup_header' %>
+</body>
+</html>
+<div class="container" id="account-page-content">
+  <div class="row">
+    <div class="span12">
+      <div class="parent-wrapper">
+        <ul class="inline navbar-list">
+          <li>
+            <btn class="btn btn-custom">
+              <img src="https://s3-us-west-2.amazonaws.com/folioshine-icons/HomeBtn.png"> &nbsp;Home</btn>
+          </li><!-- end of li -->
+          <li>
+            <btn class="btn btn-custom">
+              <img src="https://s3-us-west-2.amazonaws.com/folioshine-icons/CreateFolio1.png"> &nbsp;Create Folio</btn>
+          </li><!-- end of li-->
+          <li>
+            <btn class="btn btn-custom">
+              <img src="https://s3-us-west-2.amazonaws.com/folioshine-icons/FindFolioButton.png"> &nbsp;Find a Folio</btn>
+          </li><!-- end of li-->
+          <li>
+            <btn class="btn btn-custom">
+              <img src="https://s3-us-west-2.amazonaws.com/folioshine-icons/FindMemberBtn.png"> Find A Friend</btn>
+          </li><!-- end of li-->
+          <li>
+            <btn class="btn btn-custom">
+              <img src="https://s3-us-west-2.amazonaws.com/folioshine-icons/HowItWorksBtn.png"> How It Works</btn>
+          </li><!-- end of li-->
+        </ul><!-- end of ul inline navbar-list -->
+      </div><!-- end parent wrapper -->
+    </div><!-- end of span12 -->
+  </div><!-- end of row -->
+  <div class="container" id="account-pages">
+    <div class="row sidebar-and-content">
+      <div class="span3">
+        <div class="parent-wrapper">
+          <ul class="sidebar unstyled">
+            <li class="active">
+              <btn class="btn btn-custom btn-sidebar">My Profile</btn>
+            </li><!-- end of li-->
+            <li>
+              <btn class="btn btn-custom btn-sidebar">My Folios</btn>
+            </li><!-- end of li-->
+            <li>
+              <btn class="btn btn-custom btn-sidebar">Members I Follow</btn>
+            </li><!-- end of li-->
+            <li>
+              <btn class="btn btn-custom btn-sidebar">Folios I Follow</btn>
+            </li><!-- end of li-->
+            <li>
+              <btn class="btn btn-custom btn-sidebar">Photos I Like</btn>
+            </li><!-- end of li-->
+          </ul><!-- end of ul -->
+        </div><!-- end of parent-wrapper -->
+      </div><!-- end of span3 -->
+      <div class="span9 top-spacer">
+        <div class="row">
+			<%= yield %>
+        </div><!-- end row -->
+      </div><!-- end span9 top-spacer -->
+    </div><!-- end row sidebar-and-content -->
+  </div><!-- end container account-pages -->
+</div><!-- end container account-page-content -->

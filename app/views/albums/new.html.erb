@@ -1,0 +1,11 @@
+<div class="span9 content-wrapper">
+  <div class='row'>
+	  <div class="span4 offset1 top-spacer">
+		  <h1>Create a Folio!</h1>
+		  <%= form_for @album do |f| %>
+		  	<%= f.text_field :name, placeholder: 'Enter the name you would like for your folio', class: 'fullwidth app-input' %>
+			<%= f.submit 'Create Folio!', class: 'btn btn-primary btn-large' %>
+		  <% end %>
+	  </div><!-- end span4 offset4 -->
+  </div>
+</div><!-- end of span9 account-wrapper -->

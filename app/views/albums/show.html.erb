@@ -1,0 +1,28 @@
+<div class="span9 content-wrapper">
+  <div class="row">
+    <div class="span6 top-spacer bottom-spacer account-info">
+      <h3>Folio Name:<span>&nbsp;<%= @album.name %></span></h3>
+      <h3>Text To: <span><%= @album.album_handle %></span></h3>
+      <h3>Email To: <span><%= @album.album_handle %></span></h3>
+    </div><!-- end span3 top-spacer account-info -->
+    <!-- end of span3 account-info -->
+    <div class="span3 top-spacer">
+      <div class="row">
+        <div class="span1">
+          <h5 class="attention">FOLLOWERS</h5>
+          <h5>0</h5>
+        </div><!-- end span1 -->
+      </div><!-- end span3 top-spacer -->
+    </div><!-- end of span3 --> 
+  </div><!-- end of row --> 
+</div><!-- end of span9 account-wrapper -->
+
+<div class='span9 content-wrapper top-spacer'>
+	<div class='row'>
+		<div class='span3 top-spacer bottom-spacer'>
+			<div class='photo-wrapper'>
+				<%= link_to(image_tag("http://flickholdr.com/200/200"), '#') %>
+			</div>
+		</div>
+	</div>
+</div>

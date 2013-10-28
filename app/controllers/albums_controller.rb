@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_filter :find_album, only: [:edit, :update, :show, :destroy, :get_pics, :get_html_pics, :invite, :sync_gmail]
+  layout 'app_layout'
   
   def index
     @albums = Album.all
@@ -31,11 +32,11 @@ class AlbumsController < ApplicationController
   
   def show
     @pics = @album.incoming_messages.order('id ASC')
-    @current_user = current_user
-    next_url = invite_album_url(@album)
-    @session_token = session[:token] if session[:token]
-    @google_import = GoogleImport.new(next_url: next_url, secure: false, sess: true)
-    render :layout => 'foliogrid'
+    #@current_user = current_user
+    #next_url = invite_album_url(@album)
+    #@session_token = session[:token] if session[:token]
+    #@google_import = GoogleImport.new(next_url: next_url, secure: false, sess: true)
+    #render :layout => 'foliogrid'
   end
   
   def destroy

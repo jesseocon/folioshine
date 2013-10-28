@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       else
         cookies[:auth_token] = @user.auth_token
       end
-        redirect_to root_url, notice: "Logged in!"
+        redirect_to albums_url, notice: "Logged in!"
     elsif (@user && @user.authenticate(params[:password])) && @user.verified.nil?
       flash.now[:error] = "You have to verify your account first"
       redirect_to login_url
