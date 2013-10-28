@@ -32,11 +32,6 @@ class AlbumsController < ApplicationController
   
   def show
     @pics = @album.incoming_messages.order('created_at DESC')
-    #@current_user = current_user
-    #next_url = invite_album_url(@album)
-    #@session_token = session[:token] if session[:token]
-    #@google_import = GoogleImport.new(next_url: next_url, secure: false, sess: true)
-    #render :layout => 'foliogrid'
   end
   
   def destroy

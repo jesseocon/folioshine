@@ -21,7 +21,7 @@
               <img src="https://s3-us-west-2.amazonaws.com/folioshine-icons/HomeBtn.png"> &nbsp;Home</btn>
           </li><!-- end of li -->
           <li>
-            <btn class="btn btn-custom">
+            <btn class="btn btn-custom nav-button" data-target="<%= new_album_path %>">
               <img src="https://s3-us-west-2.amazonaws.com/folioshine-icons/CreateFolio1.png"> &nbsp;Create Folio</btn>
           </li><!-- end of li-->
           <li>
@@ -49,7 +49,7 @@
               <btn class="btn btn-custom btn-sidebar">My Profile</btn>
             </li><!-- end of li-->
             <li>
-              <btn class="btn btn-custom btn-sidebar">My Folios</btn>
+              <btn class="btn btn-custom btn-sidebar nav-button" data-target="<%= albums_path %>">My Folios</btn>
             </li><!-- end of li-->
             <li>
               <btn class="btn btn-custom btn-sidebar">Members I Follow</btn>

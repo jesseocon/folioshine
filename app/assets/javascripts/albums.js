@@ -7,5 +7,8 @@ $(document).ready(function(){
 	});
 	
 	$('.muther').colorbox({rel: 'muther', maxHeight:'500px', scalePhotos:true});
+	$('.nav-button').on('click', function(e){
+		window.location = $(this).data('target');
+	});
 	
 });
