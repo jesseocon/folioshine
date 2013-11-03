@@ -163,6 +163,17 @@ body {
   width:100%
 }
 
+.relative {
+	position:relative;
+}
+.caption { 
+	position:absolute;
+	bottom:30px;
+	left:25px;
+	font-size:1.5em;
+	font-weight:900;
+}
+
 div.photo-wrapper {
   margin-left:10px;
   margin-bottom:10px;
@@ -189,6 +200,10 @@ div.pic-wrapper {
   -moz-box-shadow: 1px 1px 68px #000000;
   -webkit-box-shadow: 1px 1px 68px #000000;
   box-shadow: 1px 1px 68px #000000;
+}
+
+div.folio {
+	border-bottom-width:65px;
 }
 
 div.photo-wrapper h4 {

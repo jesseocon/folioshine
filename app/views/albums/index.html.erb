@@ -1,11 +1,11 @@
 <div class='span9 content-wrapper top-spacer'>
 	<div class='row' id='ima-grid'>
 		<% @albums.each do |album| %>
-			<div class='span3 top-spacer bottom-spacer picto'>
-				<div class='nailthumb-container side-spacer pic-wrapper'>
+			<div class='span3 top-spacer bottom-spacer picto relative'>
+				<div class='nailthumb-container side-spacer pic-wrapper folio'>
 					<%= link_to(image_tag(album.incoming_messages.first.photo.url, class: 'item'), album_path(album)) %>
 				</div><!-- end nailthumb-container side-spacer pic-wrapper -->
-				<p>Caption</p>
+				<p class='caption'>Caption</p>
 			</div><!-- end span3 top-spacer bottom-spacer picto -->
 		<% end %><!-- end pics-->
 	</div><!-- end row -->
