@@ -29,6 +29,10 @@ input.app-input {
 	width:225px;
 	height:225px;
 }
+.item {
+	width:350px;
+	height:350px;
+}
 
 .picto {
 	margin-top: 60px;
