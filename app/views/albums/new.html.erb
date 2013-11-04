@@ -3,6 +3,7 @@
 	  <div class="span4 offset1 top-spacer">
 		  <h1>Create a Folio!</h1>
 		  <%= form_for @album do |f| %>
+				<%= render 'error_messages' %>
 		  	<%= f.text_field :name, placeholder: 'Enter the name you would like for your folio', class: 'fullwidth app-input' %>
 			<%= f.submit 'Create Folio!', class: 'btn btn-primary btn-large' %>
 		  <% end %>
