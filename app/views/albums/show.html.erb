@@ -33,6 +33,7 @@
   </div><!-- end of row --> 
 </div><!-- end of span9 account-wrapper -->
 
+<% if !@pics.empty? %>
 <div class='span9 content-wrapper top-spacer'>
 	<div class='row' id='ima-grid'>
 		<% @pics.each do |pic| %>
@@ -44,3 +45,5 @@
 		<% end %><!-- end pics-->
 	</div><!-- end row -->
 </div><!-- end span9 content-wrapper bottom-spacer picto-->
+<% end %>
+
