@@ -4,7 +4,12 @@ class Album < ActiveRecord::Base
   has_many :invitations
   belongs_to :user
   
+  VALID_NAME_REGEX = /^[a-z1-9\-\.]*$/
+  
   validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, format: { with: VALID_NAME_REGEX }
+  validates :name, length: { maximum: 30, minimum: 2}
+  #
   before_create :make_handle
   
   scope :by_user, lambda { |uid| where(user_id: uid) }
