@@ -1,17 +1,19 @@
 class AlbumsController < ApplicationController
+  before_filter :find_user
   before_filter :find_album, only: [:edit, :update, :show, :destroy, :get_pics, :get_html_pics, :invite, :sync_gmail]
   layout 'app_layout'
   
   def index
-    @albums = Album.all
+    puts current_user.id
+    @albums = Album.by_user(current_user.id)
   end
   
   def new
-    @album = Album.new(:user_id => current_user.id)
+    @album = @user.albums.new
   end
   
   def create
-    @album = Album.create(params[:album])
+    @album = @user.albums.create(params[:album])
     if @album.save
       redirect_to album_path(@album)
     else
@@ -77,6 +79,10 @@ class AlbumsController < ApplicationController
   end
   
   private
+    def find_user
+      @user = current_user
+    end
+    
     def find_album
       @album = Album.find(params[:id])
     end

@@ -7,6 +7,8 @@ class Album < ActiveRecord::Base
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   before_create :make_handle
   
+  scope :by_user, lambda { |uid| where(user_id: uid) }
+  
   def make_handle
     self.album_handle = "#{self.name}@inbound.folioshine.com"
   end
