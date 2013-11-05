@@ -5,7 +5,8 @@
 		  <%= form_for @album do |f| %>
 				<%= render 'error_messages' %>
 		  	<%= f.text_field :name, placeholder: 'Enter the name you would like for your folio', class: 'fullwidth app-input' %>
-			<%= f.submit 'Create Folio!', class: 'btn btn-primary btn-large' %>
+				<%= f.text_field :description, placeholder: 'Enter a description for your folio', class: 'fullwidth app-input' %>
+				<%= f.submit 'Create Folio!', class: 'btn btn-primary btn-large', id: 'folio-submit' %>
 		  <% end %>
 	  </div><!-- end span4 offset4 -->
   </div>

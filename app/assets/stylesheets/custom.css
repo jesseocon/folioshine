@@ -29,9 +29,9 @@ input.app-input {
 	width:225px;
 	height:225px;
 }
-.item {
+.item-wide {
 	width:350px;
-	height:350px;
+	height:255px;
 }
 
 .picto {

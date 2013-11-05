@@ -1,5 +1,5 @@
 class Album < ActiveRecord::Base
-  attr_accessible :album_handle, :name, :user_id
+  attr_accessible :album_handle, :name, :user_id, :description
   has_many :incoming_messages
   has_many :invitations
   belongs_to :user
@@ -9,6 +9,7 @@ class Album < ActiveRecord::Base
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :name, format: { with: VALID_NAME_REGEX }
   validates :name, length: { maximum: 30, minimum: 2}
+  validates :description, presence: true
   #
   before_create :make_handle
   

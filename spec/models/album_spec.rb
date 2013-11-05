@@ -56,4 +56,9 @@ describe Album do
     before { @album.name = "a"  }
     it { should_not be_valid }
   end
+  
+  describe 'when the description is blank' do
+    before { @album.description = '' }
+    it { should_not be_valid }
+  end
 end 
