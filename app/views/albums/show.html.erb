@@ -37,10 +37,11 @@
 <div class='span9 content-wrapper top-spacer'>
 	<div class='row' id='ima-grid'>
 		<% @pics.each do |pic| %>
-			<div class='span3 top-spacer bottom-spacer picto'>
+			<div class='span3 top-spacer bottom-spacer picto relative'>
 				<div class='nailthumb-container side-spacer pic-wrapper'>
 					<%= link_to(image_tag(pic.photo.url, class: 'item'), pic.photo.url, class: 'muther') %>
 				</div><!-- end nailthumb-container side-spacer pic-wrapper -->
+				<p class='small-caption'>Caption</p>
 			</div><!-- end span3 top-spacer bottom-spacer picto -->
 		<% end %><!-- end pics-->
 	</div><!-- end row -->
