@@ -4,7 +4,6 @@ class AlbumsController < ApplicationController
   layout 'app_layout'
   
   def index
-    puts current_user.id
     @albums = Album.by_user(current_user.id)
   end
   

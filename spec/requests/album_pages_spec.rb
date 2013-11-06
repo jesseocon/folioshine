@@ -32,16 +32,15 @@ describe 'Albums Pages' do
       end
     end
     
-    describe 'filling in the new folio with incorrect information', js: true do
+    describe 'filling in the new folio with incorrect information' do
       before do
         fill_in 'album[name]', with: 'coolname'
         fill_in 'album[description]', with: ''
       end
       
       it 'should not increment the Albums count and should display an error message' do
-        sleep 3.seconds
         expect { click_button 'Create Folio!' }.not_to change(Album, :count)
-        
+        page.should have_selector('div.alert')
       end
     end
 
